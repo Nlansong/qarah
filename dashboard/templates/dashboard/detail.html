@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container text-center" >
+    <h1>{{post.title}}  </h1>
+    <p>written by {{post.author}}</p>
+    <p> {{post.excerpt}} </p>
+    <img  src="{{post.image.url}}"  >
+    <p class="pt-2"> published on | {{post.publish_date}} </p>
+    <p> modified on | {{post.date_modified}} </p>
+    <div> {{post.body}} </div>
+     {% if tag in post %}
+     {% for tag in post %}
+     {{post.tag}}
+     {% endfor %}
+     {% endif %}
+
+     <p> post.category </p>
+
+</div>
+{% endblock %}
